@@ -1,53 +1,26 @@
 <script setup lang="ts">
-import { getCurrentInstance, onMounted, onUnmounted, ref, watch } from 'vue'
-import type { Ref } from 'vue'
-import WaveSurfer, { type WaveSurferEvents, type WaveSurferOptions } from 'wavesurfer.js'
+import { getCurrentInstance, onMounted, ref } from 'vue'
+import type { PartialWaveSurferOptions } from '@/types'
+import { useWaveSurfer } from '@/composables/useWaveSurfer'
+import { waveServerEventsEmitter } from '@/eventsEmitter'
 
-
-type PartialWaveSurferOptions = {
-  options: Omit<WaveSurferOptions, "container">
-}
-const props = defineProps<PartialWaveSurferOptions>()
+const props = defineProps<{
+  options: PartialWaveSurferOptions
+}>()
 
 const containerRef = ref<HTMLElement | null>(null)
-const wavesurfer = ref<WaveSurfer | null>(null)
-  const instance = getCurrentInstance();
-  
-const eventsToHandle: Array<keyof WaveSurferEvents> = ['audioprocess', 'click', 'dblclick', 'decode', 'drag', 'finish', 'init', 'interaction', 'load', 'loading', 'pause', 'play', 'ready', 'redraw', 'redrawcomplete', 'scroll', 'seeking', 'timeupdate', 'zoom'];
-
-
-const createWaveSurfer = () => {
-  if (containerRef.value) {
-    wavesurfer.value = WaveSurfer.create({
-      container: containerRef.value,
-      ...props.options,
-    });
-     // Iterate through the manually defined events and dynamically emit them
-     eventsToHandle.forEach((eventName) => {
-      wavesurfer.value?.on(eventName, (...args)=>{
-        // console.log('args ======', ...args);
-        
-        instance?.emit(eventName, ...args)
-      })
-    });
-    
-  }
-};
-
-const destroyWaveSurfer = () => {
-  if (wavesurfer.value) {
-    wavesurfer.value.destroy();
-    wavesurfer.value = null;
-  }
-};
+const { waveSurfer } = useWaveSurfer({ containerRef, options: props.options })
+const instance = getCurrentInstance();
 
 onMounted(() => {
-  createWaveSurfer()
+  // Iterate through the manually defined eventsEmitter and dynamically emit them
+  waveServerEventsEmitter.forEach((eventName) => {
+    waveSurfer.value?.on(eventName, (...args) => {
+      instance?.emit(eventName, ...args)
+    })
+  });
+  instance?.emit('waveSurfer', waveSurfer.value)
 })
-onUnmounted(() => {
-  destroyWaveSurfer()
-})
-
 </script>
 
 <template>
