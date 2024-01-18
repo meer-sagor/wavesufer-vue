@@ -1,6 +1,6 @@
 {
   "author": "Meer Sagor",
-  "name": "@wavesurfer/vue",
+  "name": "@meersagor/wavesurfer-vue",
   "version": "0.0.1",
   "description": "Vue3 component for wavesurfer.js",
   "private": false,
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:meer-sagor/wavesufer-vue.git"
+    "url": "git+ssh://git@github.com/meer-sagor/wavesufer-vue.git"
   },
   "bugs": {
     "url": "https://github.com/meer-sagor/wavesufer-vue/issues"
@@ -19,14 +19,15 @@
   "homepage": "https://wavesurfer.xyz",
   "main": "./dist/@wavesurfer-vue.umd.cjs",
   "module": "./dist/@wavesurfer-vue.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "exports": {
     ".": {
       "import": "./dist/@wavesurfer-vue.js",
       "require": "./dist/@wavesurfer-vue.umd.cjs"
     }
+  },
+  "types": "./dist/index.d.ts",
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "wavesurfer",
