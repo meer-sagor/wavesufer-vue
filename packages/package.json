@@ -5,6 +5,7 @@
   "description": "Vue3 component for wavesurfer.js",
   "private": false,
   "type": "module",
+  "license":"GPL-2.0",
   "files": [
     "dist"
   ],
@@ -18,6 +19,9 @@
   "homepage": "https://wavesurfer.xyz",
   "main": "./dist/@wavesurfer-vue.umd.cjs",
   "module": "./dist/@wavesurfer-vue.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": {
       "import": "./dist/@wavesurfer-vue.js",
