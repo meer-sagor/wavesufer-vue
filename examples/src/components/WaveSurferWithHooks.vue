@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useWaveSurfer } from '@/composables/useWaveSurfer'
+import {useWaveSurfer} from '@wavesurfer/vue'
 const containerRef = ref<HTMLElement | null>(null)
 const options = ref({
   height: 48,
