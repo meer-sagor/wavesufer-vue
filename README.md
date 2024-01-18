@@ -23,7 +23,7 @@ npm i @meersagor/wavesurfer-vue
 
 As a component:
 
-```js
+```vue
 <script setup lang="ts">
 import { ref } from 'vue'
 import type WaveSurfer from 'wavesurfer.js'
@@ -75,7 +75,7 @@ const readyWaveSurferHandler = (ws: WaveSurfer) => {
 
 Alternatively, as a vue composable method:
 
-```js
+```vue
 <script setup lang="ts">
 import { ref } from 'vue'
 import {useWaveSurfer} from '@meersagor/wavesurfer-vue'

@@ -5,7 +5,7 @@
   "description": "Vue3 component for wavesurfer.js",
   "private": false,
   "type": "module",
-  "license":"GPL-2.0",
+  "license": "GPL-2.0",
   "files": [
     "dist"
   ],
@@ -17,12 +17,12 @@
     "url": "https://github.com/meer-sagor/wavesufer-vue/issues"
   },
   "homepage": "https://wavesurfer.xyz",
-  "main": "./dist/@wavesurfer-vue.umd.cjs",
-  "module": "./dist/@wavesurfer-vue.js",
+  "main": "./dist/@meersagor-wavesurfer-vue.umd.cjs",
+  "module": "./dist/@meersagor-wavesurfer-vue.js",
   "exports": {
     ".": {
-      "import": "./dist/@wavesurfer-vue.js",
-      "require": "./dist/@wavesurfer-vue.umd.cjs"
+      "import": "./dist/@meersagor-wavesurfer-vue.js",
+      "require": "./dist/@meersagor-wavesurfer-vue.umd.cjs"
     }
   },
   "types": "./dist/index.d.ts",
@@ -45,7 +45,7 @@
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "link-pack": "(yarn --global unlink '@wavesurfer/vue' || true) && yarn --global link"
+    "link-pack": "(yarn --global unlink '@meersagor/wavesurfer-vue' || true) && yarn --global link"
   },
   "dependencies": {
     "vue": "^3.3.11",
