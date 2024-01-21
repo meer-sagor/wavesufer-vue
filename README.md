@@ -2,6 +2,10 @@
 
 [![npm](https://img.shields.io/npm/v/@meersagor/wavesurfer-vue)](https://www.npmjs.com/package/@meersagor/wavesurfer-vue)
 
+
+![audio player preview](./src/assets/preview.png)
+
+
 A Vue 3 component for [wavesurfer.js](http://github.com/katspaugh/wavesurfer.js). This component simplifies the usage of wavesurfer.js in Vue.js, with all familiar wavesurfer options available as Vue props.
 
 You can subscribe to various [wavesurfer events](https://wavesurfer.xyz/docs/types/wavesurfer.WaveSurferEvents) via props. Simply prepend an event name with 'on', e.g., `ready` -> `@ready`. Each event receives a wavesurfer instance as the first argument.
