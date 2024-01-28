@@ -1,6 +1,9 @@
 # @meersagor/wavesurfer-vue
 
 [![npm](https://img.shields.io/npm/v/@meersagor/wavesurfer-vue)](https://www.npmjs.com/package/@meersagor/wavesurfer-vue)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 
 ## Audio Player
 
@@ -117,6 +120,52 @@ const formatTime = (seconds: number):string => [seconds / 60, seconds % 60].map(
 ## Audio Recorder
 
 ![audio player preview](./src/assets/recorder.png)
+
+
+
+## useUseWaveSurferRecorder: composeable method Return Types
+
+### `waveSurfer`
+
+-   Type: `Ref<WaveSurfer | null>`
+-   Description: A ref containing the instance of the `wavesurfer.js` player.
+
+### `waveSurferRecorder`
+
+-   Type: `Ref<RecordPlugin | null>`
+-   Description: A ref containing the instance of the `wavesurfer.js` record plugin.
+
+### `currentTime`
+
+-   Type: `ComputedRef<string>`
+-   Description: A computed ref representing the current recording time in `mm:ss` format.
+
+### `isPaused`
+
+-   Type: `ComputedRef<boolean | undefined>`
+-   Description: A computed ref indicating whether the recording is currently paused.
+
+### `isRecording`
+
+-   Type: `ComputedRef<boolean | undefined>`
+-   Description: A computed ref indicating whether the recording is currently in progress.
+
+### `startRecording()`
+
+-   Type: `() => void`
+-   Description: Method to start or resume the recording process. If recording is already in progress, it stops and starts a new recording.
+
+### `stopRecording()`
+
+-   Type: `() => Promise<Blob>`
+-   Description: Method to stop the recording process and return the recorded audio as a `Blob` object.
+
+### `pauseRecording()`
+
+-   Type: `() => void`
+-   Description: Method to resume a paused recording. If recording is not paused, it toggles between pause and resume.
+
+
 
 ## Docs
 
