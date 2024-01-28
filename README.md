@@ -2,6 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@meersagor/wavesurfer-vue)](https://www.npmjs.com/package/@meersagor/wavesurfer-vue)
 
+## Audio Player
 
 ![audio player preview](./src/assets/preview.png)
 
@@ -112,6 +113,10 @@ const formatTime = (seconds: number):string => [seconds / 60, seconds % 60].map(
   </main>
 </template>
 ```
+
+## Audio Recorder
+
+![audio player preview](./src/assets/recorder.png)
 
 ## Docs
 
