@@ -151,7 +151,7 @@ const formatTime = (seconds: number):string => [seconds / 60, seconds % 60].map(
 -   Type: `() => Promise<Blob>`
 -   Description: Method to stop the recording process and return the recorded audio as a `Blob` object.
 
-### `resumeRecording()`
+### `pauseRecording()`
 
 -   Type: `() => void`
 -   Description: Method to resume a paused recording. If recording is not paused, it toggles between pause and resume.

@@ -9,7 +9,10 @@ export const useUseWaveSurferRecorder = ({ containerRef, options }: WaveSurferIn
     const waveSurferRecorder = ref<RecordPlugin | null>(null)
     const recordingTime = ref<number>(0)
 
-    const currentTime = computed(() => {
+    const isRecording = ref<boolean>(false)
+    const isPaused = ref<boolean>(false)
+
+    const currentTime = computed<string>(() => {
         // time will be in milliseconds, convert it to mm:ss format
         return [
             Math.floor((recordingTime.value % 3600000) / 60000), // minutes
@@ -18,26 +21,36 @@ export const useUseWaveSurferRecorder = ({ containerRef, options }: WaveSurferIn
             .map((v) => (v < 10 ? "0" + v : v))
             .join(":")
     })
-    const isPaused = computed(() => waveSurferRecorder.value?.isPaused())
-    const isRecording = computed(() => waveSurferRecorder.value?.isRecording())
+    const isPauseResume = computed<boolean>(() => isRecording.value || !isPaused.value)
+    
 
-    const startRecording = () => {
-        if (waveSurferRecorder.value?.isRecording() || waveSurferRecorder.value?.isPaused()) {
-            waveSurferRecorder.value?.stopRecording()
-            return
-        }
-        waveSurferRecorder.value?.startRecording()
+    const recordProcessStart = () => {
         if (waveSurferRecorder.value) {
             waveSurferRecorder.value?.on("record-progress", (time) => {
                 recordingTime.value = time
             })
         }
     }
+
+    const startRecording = () => {
+        if (waveSurferRecorder.value?.isRecording() || waveSurferRecorder.value?.isPaused()) {
+            waveSurferRecorder.value?.stopRecording()
+            isRecording.value = false
+            isPaused.value = true
+            return
+        }
+        waveSurferRecorder.value?.startRecording()
+        isRecording.value = true
+        isPaused.value = false
+        recordProcessStart()
+    }
     const stopRecording = (): Promise<Blob> => {
         return new Promise((resolve) => {
             let blob: Blob
             if (waveSurferRecorder.value?.isRecording() || waveSurferRecorder.value?.isPaused()) {
                 waveSurferRecorder.value?.stopRecording()
+                isRecording.value = false
+                isPaused.value = false
             }
             waveSurferRecorder.value?.on("record-end", (b: Blob) => {
                 blob = b
@@ -46,11 +59,15 @@ export const useUseWaveSurferRecorder = ({ containerRef, options }: WaveSurferIn
         })
     }
 
-    const resumeRecording = () => {
+    const pauseRecording = () => {
         if (waveSurferRecorder.value?.isPaused()) {
             waveSurferRecorder.value?.resumeRecording()
+            isRecording.value = true
+            isPaused.value = false
             return
         }
+        isRecording.value = false
+        isPaused.value = true
         waveSurferRecorder.value?.pauseRecording()
     }
 
@@ -64,10 +81,11 @@ export const useUseWaveSurferRecorder = ({ containerRef, options }: WaveSurferIn
         waveSurfer,
         waveSurferRecorder,
         currentTime,
-        isPaused,
-        isRecording,
         startRecording,
         stopRecording,
-        resumeRecording,
+        pauseRecording,
+        isRecording,
+        isPaused,
+        isPauseResume,
     }
 }
