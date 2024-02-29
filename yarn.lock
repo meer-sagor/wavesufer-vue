@@ -1964,10 +1964,10 @@ vue@^3.3.11:
     "@vue/server-renderer" "3.4.15"
     "@vue/shared" "3.4.15"
 
-wavesurfer.js@^7.6.4:
-  version "7.6.4"
-  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.6.4.tgz#37257a84500ab5061eb70e38d400b3c6d7266b1f"
-  integrity sha512-ZpGOHzFeShTD02OoXNSoo9hfHM7awPckNjlRuCbLb9eKcHTJB8tEE+REkNOwJKJ46uo0cT7VeRbMlVvKgzUV/w==
+wavesurfer.js@^7.7.3:
+  version "7.7.3"
+  resolved "https://registry.yarnpkg.com/wavesurfer.js/-/wavesurfer.js-7.7.3.tgz#f0fe8415abf29fdfcbb8d9b1ef0dedc7c70cd246"
+  integrity sha512-TC7cQb0RVggtNC+Dl05gcnhSFL5U+fww3ZYJUuqgfR+r9oY+bh/hChCipDFDjs5cWtuek3GEtsPXWa93a9XYxw==
 
 which@^2.0.1:
   version "2.0.2"
