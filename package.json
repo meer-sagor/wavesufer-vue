@@ -5,7 +5,7 @@
   "description": "Vue3 component for wavesurfer.js",
   "private": false,
   "type": "module",
-  "license": "GPL-2.0",
+  "license": "MIT",
   "files": [
     "dist"
   ],
