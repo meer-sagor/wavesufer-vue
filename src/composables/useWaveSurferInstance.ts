@@ -1,4 +1,4 @@
-import type { WaveSurferIns } from '@/types'
+import type { WaveSurferIns } from '../types'
 import WaveSurfer from 'wavesurfer.js'
 import { onMounted, onUnmounted, ref } from 'vue'
 

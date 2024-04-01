@@ -46,7 +46,6 @@ const options = ref({
   barWidth: 5,
   barRadius: 8,
   duration: 80,
-  // cursorWidth: 0,
   url: "https://revews-bucket.s3.ap-southeast-1.amazonaws.com/a06mmMU3sgnzuUkH4OiHvyuUgCFdLSnJaDLBao7y.webm",
 })
 
@@ -123,7 +122,7 @@ const formatTime = (seconds: number):string => [seconds / 60, seconds % 60].map(
 
 
 
-## useUseWaveSurferRecorder: composeable method Return Types
+## useWaveSurferRecorder: composable method Return Types
 
 ### `waveSurfer`
 

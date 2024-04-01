@@ -1,4 +1,5 @@
-import WaveSurferPlayer from '@/components/WaveSurferPlayer.vue';
-import { useWaveSurfer } from '@/composables/useWaveSurfer'
+import WaveSurferPlayer from './components/WaveSurferPlayer.vue';
+import { useWaveSurfer } from './composables/useWaveSurfer'
+import { useWaveSurferRecorder } from './composables/useWaveSurferRecorder';
 
-export {WaveSurferPlayer, useWaveSurfer}
+export {WaveSurferPlayer, useWaveSurfer, useWaveSurferRecorder}

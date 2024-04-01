@@ -1,7 +1,7 @@
 import { type WaveSurferOptions } from 'wavesurfer.js'
 import type { Ref } from 'vue'
-import type { useWaveSurferInstance } from '@/composables/useWaveSurferInstance'
-import type { useWaveSurferState } from '@/composables/useWaveSurferState'
+import type { useWaveSurferInstance } from '../composables/useWaveSurferInstance'
+import type { useWaveSurferState } from '../composables/useWaveSurferState'
 
 export type PartialWaveSurferOptions = Omit<WaveSurferOptions, 'container'>
 

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { getCurrentInstance, onMounted, ref } from 'vue'
-import type { PartialWaveSurferOptions } from '@/types'
-import { useWaveSurfer } from '@/composables/useWaveSurfer'
-import { waveServerEventsEmitter } from '@/eventsEmitter'
+import type { PartialWaveSurferOptions } from '../types'
+import { useWaveSurfer } from '../composables/useWaveSurfer'
+import { waveServerEventsEmitter } from '../eventsEmitter'
 
 const props = defineProps<{
   options: PartialWaveSurferOptions
