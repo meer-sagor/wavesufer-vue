@@ -1,5 +1,11 @@
 # @meersagor/wavesurfer-vue
 
+## 0.1.0
+
+### Minor Changes
+
+- f72cdf6: upgrade type definition
+
 ## 0.0.5
 
 ### Patch Changes
