@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'node:url'
+// import { fileURLToPath, URL } from 'url'
 import vue from '@vitejs/plugin-vue'
-import { resolve } from 'node:path'
-import dts from 'vite-plugin-dts'
+import { resolve } from 'path'
+// import dts from 'vite-plugin-dts'
+// import dts from 'rollup-plugin-dts'
 
 export default defineConfig({
-  plugins: [vue(), dts()],
+  plugins: [vue()],
   build: {
+    target: 'esnext',
     lib: {
       name: '@meersagor/wavesurfer-vue',
       entry: resolve(__dirname, 'src/index.ts'),
@@ -23,12 +25,7 @@ export default defineConfig({
           vue: 'Vue',
           'wavesurfer.js': 'WaveSurfer'
         }
-      }
-    }
-  },
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      },
     }
   }
 })
