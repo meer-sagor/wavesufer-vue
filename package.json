@@ -26,6 +26,7 @@
       "require": "./dist/@meersagor-wavesurfer-vue.umd.cjs"
     }
   },
+  "types": "./dist/types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
