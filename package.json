@@ -21,12 +21,13 @@
   "module": "./dist/@meersagor-wavesurfer-vue.js",
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/@meersagor-wavesurfer-vue.js",
-      "require": "./dist/@meersagor-wavesurfer-vue.umd.cjs"
+      "import": {
+        "types": "./types/esm/index.d.ts",
+        "default": "./esm/index.js"
+      }
     }
   },
-  "types": "./dist/types/index.d.ts",
+  "types": "./types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
