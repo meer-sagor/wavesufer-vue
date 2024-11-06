@@ -21,7 +21,10 @@
   "module": "./dist/@meersagor-wavesurfer-vue.js",
   "exports": {
     ".": {
-      "import": "./dist/@meersagor-wavesurfer-vue.js",
+      "import": {
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/@meersagor-wavesurfer-vue.js"
+      },
       "require": "./dist/@meersagor-wavesurfer-vue.umd.cjs"
     }
   },
