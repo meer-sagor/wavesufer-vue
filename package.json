@@ -22,12 +22,13 @@
   "exports": {
     ".": {
       "import": {
-        "types": "./types/esm/index.d.ts",
-        "default": "./esm/index.js"
-      }
+        "types": "./dist/types/index.d.ts",
+        "default": "./dist/@meersagor-wavesurfer-vue.js"
+      },
+      "require": "./dist/@meersagor-wavesurfer-vue.umd.cjs"
     }
   },
-  "types": "./types/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "publishConfig": {
     "access": "public"
   },
