@@ -1,5 +1,11 @@
 # @meersagor/wavesurfer-vue
 
+## 0.1.1
+
+### Patch Changes
+
+- 8254f71: upgrade pack & resolve typescript type error
+
 ## 0.1.0
 
 ### Minor Changes
