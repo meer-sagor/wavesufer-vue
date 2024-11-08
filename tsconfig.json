@@ -3,21 +3,34 @@
     "baseUrl": "./",
     "outDir": "dist",
     "declarationDir": "dist",
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "isolatedModules": true,
-    "strict": true,
+    "target": "ES2020",
+    "module": "ES2020",
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "declaration": true,
     "emitDeclarationOnly": false,
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "lib": ["ES2020", "dom", "dom.iterable", "scripthost"],
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "useDefineForClassFields": true,
+
+    /* Bundler mode */
+    "moduleResolution": "node",
+    // "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "types": ["vite/client"]
   },
   "include": ["vite.config.*", "env.d.ts", "src/**/*", "src/**/*.vue"]
 }
