@@ -1,10 +1,10 @@
 import {computed, onMounted, ref} from "vue";
 import RecordPlugin from "wavesurfer.js/dist/plugins/record.js"
-import type {WaveSurferIns} from "../types";
 import {useWaveSurferInstance} from "./useWaveSurferInstance";
+import type { UseWaveSurferRecorder } from '../types'
 
 
-export const useWaveSurferRecorder = ({ containerRef, options }: WaveSurferIns) => {
+export const useWaveSurferRecorder = ({ containerRef, options, recordPluginOptions }: UseWaveSurferRecorder) => {
     const { waveSurfer } = useWaveSurferInstance({ containerRef, options })
     const waveSurferRecorder = ref<RecordPlugin | null>(null)
     const recordingTime = ref<number>(0)
@@ -72,7 +72,10 @@ export const useWaveSurferRecorder = ({ containerRef, options }: WaveSurferIns) 
     }
 
     onMounted(() => {
-        const recordIns = waveSurfer.value?.registerPlugin(RecordPlugin.create({ renderRecordedAudio: false }))
+        const recordIns = waveSurfer.value?.registerPlugin(RecordPlugin.create({
+            renderRecordedAudio: false,
+            ...recordPluginOptions
+        }))
         if (recordIns) {
             waveSurferRecorder.value = recordIns
         }
