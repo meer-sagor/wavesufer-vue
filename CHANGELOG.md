@@ -1,5 +1,11 @@
 # @meersagor/wavesurfer-vue
 
+## 0.1.2
+
+### Patch Changes
+
+- 7430c40: Recorder Plugin Options support
+
 ## 0.1.1
 
 ### Patch Changes
