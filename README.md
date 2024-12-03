@@ -122,7 +122,7 @@ const formatTime = (seconds: number):string => [seconds / 60, seconds % 60].map(
 
 
 
-## useWaveSurferRecorder: composable method Return Types
+## use useWaveSurferRecorder composable method
 
 ```vue
 <script lang="ts" setup>
@@ -145,6 +145,9 @@ const options = computed(() => ({
 const { pauseRecording, startRecording, stopRecording, currentTime, isPauseResume } = useWaveSurferRecorder({
     containerRef,
     options: options.value,
+      recordPluginOptions:{
+        continuousWaveform: true
+      }
 })
 
 const startAudioRecordHandler = () => {
@@ -173,7 +176,7 @@ const stopHandler = async () => {
     </div>
 </template>
 ```
-
+## useWaveSurferRecorder: method Return Types
 ### `waveSurfer`
 
 -   Type: `Ref<WaveSurfer | null>`
