@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/meer-sagor/wavesufer-vue/issues"
   },
-  "homepage": "https://wavesurfer.xyz",
+  "homepage": "https://docs-wavesurfer.meersagor.com",
   "main": "./dist/@meersagor-wavesurfer-vue.cjs",
   "module": "./dist/@meersagor-wavesurfer-vue.js",
   "exports": {
