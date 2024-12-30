@@ -1,5 +1,9 @@
 # @meersagor/wavesurfer-vue
 
+
+## 1.0.0
+- update package home page url
+
 ## 0.1.2
 
 ### Patch Changes
